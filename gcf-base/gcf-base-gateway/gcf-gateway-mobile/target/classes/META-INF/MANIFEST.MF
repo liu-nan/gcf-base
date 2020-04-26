@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: gcf-gateway-mobile
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Administrator
+Implementation-Vendor-Id: com.gcf
+Build-Jdk: 1.8.0_144
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/gcf-base/gcf-base-gateway/gcf-gateway-mobile
+Created-By: Maven Integration for Eclipse
+
