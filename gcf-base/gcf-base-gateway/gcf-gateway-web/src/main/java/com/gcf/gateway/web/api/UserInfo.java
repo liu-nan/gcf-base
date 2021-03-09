@@ -8,7 +8,6 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import com.gcf.common.bean.ResponseData;
-import com.netflix.ribbon.proxy.annotation.Hystrix;
 
 @Service
 public class UserInfo {
@@ -18,7 +17,6 @@ public class UserInfo {
 	@Autowired
 	private RestTemplate restTemplate;
 
-	@Hystrix
 	public ResponseData loadUserInfo(String userId) {
 		MultiValueMap<String, Object> map = new LinkedMultiValueMap<>();
 		map.add("userId", userId);
