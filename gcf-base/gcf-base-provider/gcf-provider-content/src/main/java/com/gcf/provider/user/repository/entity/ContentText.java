@@ -17,7 +17,7 @@ public class ContentText {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ID", nullable = false)
-	private int id;
+	private long id;
 	
 	@Column(name="CONTENT_CODE", length = 20, nullable = false)
 	private String contentCode;

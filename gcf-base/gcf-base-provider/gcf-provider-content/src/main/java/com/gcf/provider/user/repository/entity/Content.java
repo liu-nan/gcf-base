@@ -19,7 +19,7 @@ public class Content {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ID", nullable = false)
-	private int id;
+	private long id;
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="CONTENT_CODE", unique = true, length = 20, nullable = false)
