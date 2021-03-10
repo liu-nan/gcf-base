@@ -54,10 +54,15 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.rocketmq</groupId>
+			<artifactId>rocketmq-client</artifactId>
+		</dependency>
 	</dependencies>
 	<modules>
 		<module>gcf-provider-user</module>
 		<module>gcf-provider-permission</module>
 		<module>gcf-provider-content</module>
+		<module>gcf-provider-tag</module>
 	</modules>
 </project>
