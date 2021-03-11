@@ -1,9 +1,9 @@
 package com.gcf.provider.content.repository.jpa;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.gcf.provider.content.repository.entity.Content;
 
-public interface ContentRepository extends CrudRepository<Content, Long> {
+public interface ContentRepository extends JpaRepository<Content, Long> {
 
 }

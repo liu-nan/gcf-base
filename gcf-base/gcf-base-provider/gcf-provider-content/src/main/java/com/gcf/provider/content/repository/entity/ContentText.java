@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 import lombok.Data;
 
 @Entity
@@ -16,10 +17,10 @@ public class ContentText {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="ID", nullable = false)
+	@Column(name="ID", nullable = false, updatable = false)
 	private long id;
 	
-	@Column(name="CONTENT_CODE", length = 20, nullable = false)
+	@Column(name="CONTENT_CODE", length = 20, nullable = false, updatable = false)
 	private String contentCode;
 	
 	@Column(name=" SEQUENCE_NUMBER", nullable = false)

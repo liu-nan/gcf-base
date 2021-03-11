@@ -34,7 +34,7 @@
 		<jwt.version>3.4.0</jwt.version>
 		<redis.version>2.4.2</redis.version>
 		<lombok.version>1.18.12</lombok.version>
-		<rocketmq.version>4.8.0</rocketmq.version>
+		<rocketmq.version>4.3.0</rocketmq.version>
 	</properties>
 
 	<dependencies>
@@ -53,6 +53,11 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.15</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

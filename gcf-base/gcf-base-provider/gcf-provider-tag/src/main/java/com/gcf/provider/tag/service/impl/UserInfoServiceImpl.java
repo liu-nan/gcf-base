@@ -1,4 +1,4 @@
-package com.gcf.provider.content.service.impl;
+package com.gcf.provider.tag.service.impl;
 
 import java.util.Map;
 
@@ -6,7 +6,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gcf.provider.content.service.UserInfoService;
+import com.gcf.provider.tag.service.UserInfoService;
 
 @Service
 public class UserInfoServiceImpl implements UserInfoService {

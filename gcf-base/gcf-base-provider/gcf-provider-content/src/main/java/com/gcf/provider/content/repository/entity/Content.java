@@ -6,23 +6,21 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.gcf.common.repository.AbstractEntity;
+
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Entity
 @Table(name="CT_CONTENT")
 @Data
-public class Content {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="ID", nullable = false)
-	private long id;
+@EqualsAndHashCode(callSuper = true)
+public class Content extends AbstractEntity {
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="CONTENT_CODE", unique = true, length = 20, nullable = false)
+	@Column(name="CONTENT_CODE", unique = true, length = 20, nullable = false, updatable = false)
 	private String contentCode;
 	
 	@Column(name="TITLE", length = 100, nullable = false)
@@ -67,7 +65,7 @@ public class Content {
 	@Column(name="PUBLISH_TIME")
 	private LocalDateTime publishTime;
 	
-	@Column(name="FIRST_PUBLISH_TIME")
+	@Column(name="FIRST_PUBLISH_TIME", updatable = false)
 	private LocalDateTime firstPublishTime;
 	
 	@Column(name="PUSH_STATUS", nullable = false)
@@ -93,19 +91,4 @@ public class Content {
 	
 	@Column(name="PUBLISH_URL")
 	private short publishUrl;
-	
-	@Column(name="CREATE_TIME", nullable = false)
-	private LocalDateTime createTime;
-	
-	@Column(name="LAST_MODIFY_TIME", nullable = false)
-	private LocalDateTime lastModifyTime;
-	
-	@Column(name="CREATE_ACCOUNT", nullable = false)
-	private String createAccount;
-	
-	@Column(name="LAST_MODIFY_ACCOUNT", nullable = false)
-	private String lastModifyAccount;
-	
-	@Column(name="LAST_OPERATOR_TYPE", nullable = false)
-	private short lastOperatorType;
 }
