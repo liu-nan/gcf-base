@@ -28,14 +28,14 @@ public class AuthorizeFilter implements Filter {
 		String token = httpRequest.getHeader(Constans.SERVERAUTH_HEADER);
 		System.out.println("filter in");
 		System.out.println("filter auth:"+token);
-		System.out.println(httpRequest.getAttribute("userId"));;
+		System.out.println(httpRequest.getAttribute("userId"));
 		
 
-		if(!JwtUtil.checkToken(token)) {
-			PrintWriter print = httpResponse.getWriter();
-			print.write(JSONObject.toJSONString(ResponseData.fail("无效的授权")));
-			return;
-		}
+//		if(!JwtUtil.checkToken(token)) {
+//			PrintWriter print = httpResponse.getWriter();
+//			print.write(JSONObject.toJSONString(ResponseData.fail("无效的授权")));
+//			return;
+//		}
 		//验证授权
 //		try {
 //			ServiceTokenUtil util = ServiceTokenUtil.getInstance("0123456789ABCDEFFEDCBA9876543210");
