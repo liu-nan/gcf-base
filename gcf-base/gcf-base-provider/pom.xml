@@ -64,5 +64,7 @@
 		<module>gcf-provider-permission</module>
 		<module>gcf-provider-content</module>
 		<module>gcf-provider-tag</module>
+		<module>gcf-provider-asset</module>
+		<module>gcf-provider-code</module>
 	</modules>
 </project>

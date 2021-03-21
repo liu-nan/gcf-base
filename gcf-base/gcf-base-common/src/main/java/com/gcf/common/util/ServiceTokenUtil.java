@@ -24,14 +24,14 @@ public class ServiceTokenUtil {
 
 	private ServiceTokenUtil(AlgorithmEnum algorithm, String securityKey) throws GcfException {
 		if (null == securityKey) {
-			throw new GcfException("key is empty");
+			throw new GcfException(500, "key is empty");
 		}
 		if (algorithm.equals(AlgorithmEnum.SM4) && securityKey.length() != 32) {
-			throw new GcfException("sm4 algorithm key length with 32");
+			throw new GcfException(500, "sm4 algorithm key length with 32");
 		} else if (algorithm.equals(AlgorithmEnum.DES) && securityKey.length() != 16) {
-			throw new GcfException("sm4 algorithm key length with 16");
+			throw new GcfException(500, "sm4 algorithm key length with 16");
 		} else if (algorithm.equals(AlgorithmEnum.DESede) && securityKey.length() != 32) {
-			throw new GcfException("sm4 algorithm key length with 32");
+			throw new GcfException(500, "sm4 algorithm key length with 32");
 		}
 
 		this.securityKey = securityKey;
@@ -55,7 +55,7 @@ public class ServiceTokenUtil {
 				token = DES.encryptECB(Convert.hexToByte(securityKey), serviceId.getBytes());
 			}
 		} catch (Exception e) {
-			throw new GcfException("security generic fail");
+			throw new GcfException(500, "security generic fail");
 		}
 		return Convert.byteToHexStr(token);
 	}
@@ -68,7 +68,7 @@ public class ServiceTokenUtil {
 				token = DES.encryptECB(Convert.hexToByte(securityKey), serviceId.getBytes());
 			}
 		} catch (Exception e) {
-			throw new GcfException("security generic fail");
+			throw new GcfException(500, "security generic fail");
 		}
 		return Convert.byteToHexStr(token).equals(tokenExp);
 	}

@@ -4,8 +4,6 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import com.gcf.common.repository.AbstractEntity;
@@ -19,7 +17,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class Content extends AbstractEntity {
 	
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="CONTENT_CODE", unique = true, length = 20, nullable = false, updatable = false)
 	private String contentCode;
 	

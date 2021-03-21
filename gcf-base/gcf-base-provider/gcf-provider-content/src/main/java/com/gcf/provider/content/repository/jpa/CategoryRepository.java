@@ -1,7 +1,11 @@
 package com.gcf.provider.content.repository.jpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface CategoryRepository extends JpaRepository<CategoryRepository, Long> {
+import com.gcf.provider.content.repository.entity.Category;
+
+@Repository
+public interface CategoryRepository extends JpaRepository<Category, Long> {
 
 }

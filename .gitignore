@@ -41,3 +41,4 @@ event
 target
 invoke.sh
 .DS_store
+/gcf-base/gcf-base-provider/gcf-provider-code/*.gz
