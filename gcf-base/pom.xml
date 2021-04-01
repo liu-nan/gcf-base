@@ -36,6 +36,7 @@
 		<lombok.version>1.18.12</lombok.version>
 		<rocketmq.version>4.3.0</rocketmq.version>
 		<swagger.version>2.9.2</swagger.version>
+		<alibaba.version>2020.0.RC1</alibaba.version>
 	</properties>
 
 	<dependencies>
@@ -55,6 +56,24 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.15</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<!-- rocketmq -->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+		</dependency>
+		
+		<!-- nacos -->
+		
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -64,10 +83,20 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- spring cloud -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
 				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- alibaba -->
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${alibaba.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -147,4 +176,19 @@
 			</snapshots>
 		</repository>
 	</repositories>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+		</plugins>
+	</build>
 </project>
